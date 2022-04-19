@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
 	return (
 		<NavigationContainer>
-			<StatusBar style='light' />
+			<StatusBar style='auto' />
 			<Stack.Navigator>
 				<Stack.Screen
 					name='Home'

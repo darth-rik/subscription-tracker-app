@@ -25,7 +25,7 @@ const Header = () => {
 				</View>
 				<View style={styles.expensesContainer}>
 					<Text style={styles.textLarge}>Expenses</Text>
-					<Text style={styles.textExtraLarge}>2000 $</Text>
+					<Text style={styles.textExtraLarge}>200 $</Text>
 				</View>
 			</SafeAreaView>
 		</View>
@@ -36,8 +36,8 @@ export default Header;
 
 const styles = StyleSheet.create({
 	headerContainer: {
-		backgroundColor: "#00A86B",
-		minHeight: 400,
+		backgroundColor: "#006B3C",
+		minHeight: 420,
 	},
 	headerContent: {
 		margin: 15,
