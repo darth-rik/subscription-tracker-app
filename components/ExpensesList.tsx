@@ -13,11 +13,11 @@ const ExpensesList = () => {
 					borderTopLeftRadius: 25,
 					backgroundColor: "#fff",
 					marginTop: -30,
-					elevation: 5,
+					elevation: 40,
 					padding: 20,
 				},
 			]}>
-			<View
+			{/* <View
 				style={{
 					backgroundColor: "#8d8f8e",
 					height: 3,
@@ -25,17 +25,19 @@ const ExpensesList = () => {
 					alignSelf: "center",
 					elevation: 2,
 					borderRadius: 20,
-				}}></View>
+				}}></View> */}
+
+			<Text
+				style={{
+					marginTop: 15,
+					marginBottom: 30,
+					fontSize: 20,
+					fontWeight: "bold",
+					color: "#bbbfbe",
+				}}>
+				3 Expenses
+			</Text>
 			<ScrollView>
-				<Text
-					style={{
-						marginTop: 15,
-						fontSize: 20,
-						fontWeight: "bold",
-						color: "#bbbfbe",
-					}}>
-					3 Expenses
-				</Text>
 				<ExpensesCard />
 				<ExpensesCard />
 				<ExpensesCard />

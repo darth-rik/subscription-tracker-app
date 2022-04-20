@@ -5,7 +5,7 @@ const ExpensesCard = () => {
 	return (
 		<View
 			style={{
-				marginTop: 30,
+				marginBottom: 30,
 				paddingBottom: 10,
 				borderBottomColor: "#bbbfbe",
 				borderBottomWidth: 0.8,

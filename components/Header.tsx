@@ -6,7 +6,7 @@ const Header = () => {
 	return (
 		<View style={styles.headerContainer}>
 			<SafeAreaView style={styles.headerContent}>
-				<Text style={styles.textSmall}>Good Afternoon!</Text>
+				<Text style={styles.textSmall}>Good Afternoon,</Text>
 				<Text style={styles.textLarge}>Rik</Text>
 				<View style={styles.toggleButtonContainer}>
 					<TouchableOpacity
@@ -37,7 +37,7 @@ export default Header;
 const styles = StyleSheet.create({
 	headerContainer: {
 		backgroundColor: "#006B3C",
-		minHeight: 420,
+		height: 420,
 	},
 	headerContent: {
 		margin: 15,
