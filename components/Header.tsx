@@ -4,8 +4,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const Header = () => {
 	return (
-		<View style={styles.headerContainer}>
-			<SafeAreaView style={styles.headerContent}>
+		<View
+			onLayout={(e) => console.log(e.nativeEvent.layout)}
+			style={styles.headerContainer}>
+			<View style={styles.headerContent}>
 				<Text style={styles.textSmall}>Good Afternoon,</Text>
 				<Text style={styles.textLarge}>Rik</Text>
 				<View style={styles.toggleButtonContainer}>
@@ -27,7 +29,7 @@ const Header = () => {
 					<Text style={styles.textLarge}>Expenses</Text>
 					<Text style={styles.textExtraLarge}>200 $</Text>
 				</View>
-			</SafeAreaView>
+			</View>
 		</View>
 	);
 };
@@ -37,7 +39,7 @@ export default Header;
 const styles = StyleSheet.create({
 	headerContainer: {
 		backgroundColor: "#006B3C",
-		height: 420,
+		height: 380,
 	},
 	headerContent: {
 		margin: 15,

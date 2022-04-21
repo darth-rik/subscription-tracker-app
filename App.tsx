@@ -1,40 +1,45 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+	Pressable,
+	StyleSheet,
+	Text,
+	TouchableHighlight,
+	TouchableOpacity,
+	View,
+} from "react-native";
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import HomeScreen from "./screens/HomeScreen";
 import AnalyticsScreen from "./screens/AnalyticsScreen";
-import AddExpenseScreen from "./screens/AddExpenseScreen";
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
 	return (
 		<NavigationContainer>
-			<StatusBar style='auto' />
+			<StatusBar style='light' />
 			<Tab.Navigator
 				screenOptions={({ route }) => ({
-					tabBarShowLabel: false,
+					tabBarShowLabel: true,
 					headerShown: false,
-					tabBarStyle: {
-						justifyContent: "space-around",
-					},
+					tabBarActiveTintColor: "#006B3C",
 				})}>
 				<Tab.Screen
 					name='Home'
 					component={HomeScreen}
 					options={{
-						tabBarIcon: ({ focused }) => (
+						tabBarIcon: ({ color, size }) => (
 							<MaterialCommunityIcons
 								name='home-variant'
-								size={30}
-								color={`${focused ? "#006B3C" : "#8d8f8e"}`}
+								size={size}
+								color={color}
 							/>
 						),
 					}}
 				/>
-				<Tab.Screen
+				{/* <Tab.Screen
 					name='AddExpense'
 					component={AddExpenseScreen}
 					options={({ navigation }) => ({
@@ -45,37 +50,21 @@ export default function App() {
 								color='#fff'
 							/>
 						),
-						tabBarButton: ({ onPress, children }) => (
-							<TouchableOpacity
-								style={{
-									display: `${
-										navigation.getState().index > 0
-											? "none"
-											: "flex"
-									}`,
-
-									top: -30,
-									elevation: 8,
-									width: 60,
-									height: 60,
-									borderRadius: 50,
-									backgroundColor: "#006B3C",
-								}}
-								onPress={onPress}>
-								{children}
-							</TouchableOpacity>
-						),
+						tabBarButton: (props) => <FloatingButton {...props} />,
+						tabBarItemStyle: {
+							zIndex: 5000,
+						},
 					})}
-				/>
+				/> */}
 				<Tab.Screen
 					name='Analytics'
 					component={AnalyticsScreen}
 					options={{
-						tabBarIcon: ({ focused }) => (
+						tabBarIcon: ({ color, size }) => (
 							<MaterialCommunityIcons
 								name='chart-pie'
-								size={30}
-								color={`${focused ? "#006B3C" : "#8d8f8e"}`}
+								size={size}
+								color={color}
 							/>
 						),
 					}}
