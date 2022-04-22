@@ -1,15 +1,24 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import SettingsButton from "./SettingsButton";
 
 const Header = () => {
 	return (
-		<View
-			onLayout={(e) => console.log(e.nativeEvent.layout)}
-			style={styles.headerContainer}>
+		<View style={styles.headerContainer}>
 			<View style={styles.headerContent}>
-				<Text style={styles.textSmall}>Good Afternoon,</Text>
-				<Text style={styles.textLarge}>Rik</Text>
+				<View
+					style={{
+						flexDirection: "row",
+						justifyContent: "space-between",
+						alignItems: "center",
+					}}>
+					<View>
+						<Text style={styles.textSmall}>Good Afternoon,</Text>
+						<Text style={styles.textLarge}>Rik</Text>
+					</View>
+					<SettingsButton />
+				</View>
 				<View style={styles.toggleButtonContainer}>
 					<TouchableOpacity
 						style={[
@@ -38,7 +47,7 @@ export default Header;
 
 const styles = StyleSheet.create({
 	headerContainer: {
-		backgroundColor: "#006B3C",
+		backgroundColor: "#20806e",
 		height: 380,
 	},
 	headerContent: {
@@ -61,7 +70,7 @@ const styles = StyleSheet.create({
 	},
 	textExtraSmall: {
 		fontSize: 15,
-		color: "#3EB489",
+		color: "#20806e",
 	},
 
 	toggleButtonContainer: {
@@ -81,7 +90,7 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	expensesContainer: {
-		marginTop: 40,
+		marginTop: 30,
 		width: "90%",
 		alignSelf: "center",
 		alignItems: "center",

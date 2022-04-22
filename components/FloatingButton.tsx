@@ -9,7 +9,7 @@ const FloatingButton = ({ offsetValue }: any) => {
 		Animated.spring(buttonAppear, {
 			toValue: offsetValue <= 45 ? 1 : 0,
 			tension: 25,
-			friction: 2,
+			friction: offsetValue <= 45 ? 2 : 7,
 			useNativeDriver: true,
 		}).start();
 	}, [offsetValue, buttonAppear]);
@@ -28,14 +28,13 @@ const FloatingButton = ({ offsetValue }: any) => {
 				],
 			}}>
 			<TouchableOpacity
-				onPress={() => console.log("pressed!")}
 				style={{
 					height: 70,
 					width: 70,
 					elevation: 10,
 					alignItems: "center",
 					justifyContent: "center",
-					backgroundColor: "#006B3C",
+					backgroundColor: "#20806e",
 					borderRadius: 100,
 				}}>
 				<MaterialCommunityIcons name='plus' color={"#fff"} size={35} />

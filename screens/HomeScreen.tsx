@@ -11,7 +11,6 @@ const HomeScreen = () => {
 	const deviceHeight = Dimensions.get("window").height;
 
 	const [animatedValue] = useState(new Animated.Value(0));
-
 	const [offsetValue, setOffsetValue] = useState(0);
 	//
 
@@ -24,22 +23,22 @@ const HomeScreen = () => {
 		<SafeAreaView
 			style={{
 				flex: 1,
-				backgroundColor: "#006B3C",
+				backgroundColor: "#20806e",
 			}}>
 			<FloatingButton offsetValue={offsetValue} />
 			<Animated.ScrollView
-				onScroll={(e) => (
-					Animated.event(
-						[
-							{
-								nativeEvent: {
-									contentOffset: { y: animatedValue },
-								},
-							},
-						],
-						{ useNativeDriver: true }
-					),
+				onMomentumScrollEnd={(e) =>
 					setOffsetValue(e.nativeEvent.contentOffset.y)
+				}
+				onScroll={Animated.event(
+					[
+						{
+							nativeEvent: {
+								contentOffset: { y: animatedValue },
+							},
+						},
+					],
+					{ useNativeDriver: true }
 				)}>
 				<Animated.View
 					style={{
@@ -67,9 +66,9 @@ const HomeScreen = () => {
 					}}>
 					<Text
 						style={{
-							marginTop: 15,
+							marginTop: 5,
 							marginBottom: 30,
-							fontSize: 20,
+							fontSize: 15,
 							fontWeight: "bold",
 							color: "#bbbfbe",
 						}}>

@@ -24,7 +24,7 @@ export default function App() {
 				screenOptions={({ route }) => ({
 					tabBarShowLabel: true,
 					// headerShown: false,
-					tabBarActiveTintColor: "#006B3C",
+					tabBarActiveTintColor: "#20806e",
 				})}>
 				<Tab.Screen
 					name='Home'
