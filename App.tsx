@@ -23,7 +23,7 @@ export default function App() {
 			<Tab.Navigator
 				screenOptions={({ route }) => ({
 					tabBarShowLabel: true,
-					headerShown: false,
+					// headerShown: false,
 					tabBarActiveTintColor: "#006B3C",
 				})}>
 				<Tab.Screen
@@ -37,6 +37,7 @@ export default function App() {
 								color={color}
 							/>
 						),
+						headerShown: false,
 					}}
 				/>
 				{/* <Tab.Screen
