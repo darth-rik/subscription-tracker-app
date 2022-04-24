@@ -13,6 +13,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import HomeScreen from "./screens/HomeScreen";
 import AnalyticsScreen from "./screens/AnalyticsScreen";
+import SettingsButton from "./components/SettingsButton";
 
 const Tab = createBottomTabNavigator();
 
@@ -68,6 +69,15 @@ export default function App() {
 								color={color}
 							/>
 						),
+
+						// headerTitleAlign: "center",
+						headerTitle: "Analytics",
+						headerTintColor: "#fff",
+						headerStyle: {
+							backgroundColor: "#20806e",
+						},
+						headerRight: () => <SettingsButton />,
+						headerShadowVisible: false,
 					}}
 				/>
 			</Tab.Navigator>
