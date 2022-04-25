@@ -8,6 +8,8 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { VictoryPie } from "victory-native";
+import ProgressCircle from "react-native-progress-circle";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const AnalyticsScreen = () => {
 	const width = Dimensions.get("window").width;
@@ -31,7 +33,8 @@ const AnalyticsScreen = () => {
 		setGraphicData(wantedGraphicData); // Setting the data that we want to display
 	}, []);
 	return (
-		<ScrollView
+		<ScrollView 
+			showsVerticalScrollIndicator={false}
 			style={{ backgroundColor: "#edeefa", flex: 1, padding: 10 }}>
 			<View
 				style={{
@@ -126,200 +129,11 @@ const AnalyticsScreen = () => {
 					</Text>
 				</View>
 			</View>
-			{/* <View
-				style={{
-					flex: 1,
-					backgroundColor: "blue",
-				}}> */}
+
 			<ScrollView horizontal showsHorizontalScrollIndicator={false}>
-				{/* <TouchableOpacity
-					onPress={() => setLabelName("Cats")}
-					style={{
-						backgroundColor: "orangered",
-						marginTop: 10,
-						borderRadius: 5,
-						padding: 5,
-						elevation: 5,
-						width: width - 50,
-						marginRight: 10,
-					}}>
-					<View
-						style={{
-							flexDirection: "row",
-							alignItems: "center",
-							padding: 5,
-							marginBottom: 5,
-						}}>
-						<View
-							style={{
-								height: 15,
-								width: 15,
-								borderRadius: 35,
-								backgroundColor: "#ffff",
-								marginRight: 10,
-							}}></View>
-
-						<Text
-							style={{
-								fontWeight: "bold",
-								fontSize: 15,
-								color: "#fff",
-							}}>
-							{" "}
-							Cats{" "}
-						</Text>
-						<View
-							style={{
-								flexDirection: "row",
-								marginLeft: "auto",
-							}}>
-							<Text
-								style={{
-									fontWeight: "bold",
-									fontSize: 15,
-									color: "#fff",
-								}}>
-								{" "}
-								20 USD
-							</Text>
-							<Text
-								style={{
-									fontWeight: "bold",
-									fontSize: 15,
-									color: "#fff",
-								}}>
-								{" "}
-								- 11%
-							</Text>
-						</View>
-					</View>
-				</TouchableOpacity>
-				<TouchableOpacity
-					onPress={() => setLabelName("Dogs")}
-					style={{
-						backgroundColor: "#fff",
-						marginTop: 10,
-						borderRadius: 5,
-						padding: 5,
-						elevation: 5,
-						width: width - 50,
-						marginRight: 10,
-					}}>
-					<View
-						style={{
-							flexDirection: "row",
-							alignItems: "center",
-							padding: 5,
-							marginBottom: 5,
-						}}>
-						<View
-							style={{
-								height: 15,
-								width: 15,
-								borderRadius: 35,
-								backgroundColor: "blue",
-								marginRight: 10,
-							}}></View>
-
-						<Text
-							style={{
-								fontWeight: "bold",
-								fontSize: 15,
-								color: "#000",
-							}}>
-							{" "}
-							Dogs{" "}
-						</Text>
-						<View
-							style={{
-								flexDirection: "row",
-								marginLeft: "auto",
-							}}>
-							<Text
-								style={{
-									fontWeight: "bold",
-									fontSize: 15,
-									color: "#000",
-								}}>
-								{" "}
-								20 USD
-							</Text>
-							<Text
-								style={{
-									fontWeight: "bold",
-									fontSize: 15,
-									color: "#000",
-								}}>
-								{" "}
-								- 11%
-							</Text>
-						</View>
-					</View>
-				</TouchableOpacity>
-				<TouchableOpacity
-					onPress={() => setLabelName("Birds")}
-					style={{
-						backgroundColor: "#fff",
-						marginTop: 10,
-						borderRadius: 5,
-						padding: 5,
-						elevation: 5,
-						width: width - 50,
-						marginRight: 10,
-					}}>
-					<View
-						style={{
-							flexDirection: "row",
-							alignItems: "center",
-							padding: 5,
-							marginBottom: 5,
-						}}>
-						<View
-							style={{
-								height: 15,
-								width: 15,
-								borderRadius: 35,
-								backgroundColor: "yellow",
-								marginRight: 10,
-							}}></View>
-
-						<Text
-							style={{
-								fontWeight: "bold",
-								fontSize: 15,
-								color: "#000",
-							}}>
-							{" "}
-							Birds{" "}
-						</Text>
-						<View
-							style={{
-								flexDirection: "row",
-								marginLeft: "auto",
-							}}>
-							<Text
-								style={{
-									fontWeight: "bold",
-									fontSize: 15,
-									color: "#000",
-								}}>
-								{" "}
-								20 USD
-							</Text>
-							<Text
-								style={{
-									fontWeight: "bold",
-									fontSize: 15,
-									color: "#000",
-								}}>
-								{" "}
-								- 11%
-							</Text>
-						</View>
-					</View>
-				</TouchableOpacity> */}
 				{wantedGraphicData.map((data, ind) => (
 					<TouchableOpacity
+						key={ind}
 						onPress={() => setLabelName(data.x)}
 						style={{
 							backgroundColor:
@@ -408,6 +222,143 @@ const AnalyticsScreen = () => {
 				{/*  */}
 			</ScrollView>
 			{/* </View> */}
+			<View
+				style={{
+					backgroundColor: "#edeefa",
+					marginTop: 20,
+					marginBottom: 10,
+				}}>
+				<View
+					style={{
+						backgroundColor: "#ffff",
+						borderRadius: 10,
+						elevation: 3,
+
+						padding: 10,
+					}}>
+					<View
+						style={{ flexDirection: "row", alignItems: "center" }}>
+						<View
+							style={{
+								marginRight: 15,
+							}}>
+							<MaterialCommunityIcons
+								name='chart-arc'
+								size={30}
+								color={"#20806e"}
+							/>
+						</View>
+						<View>
+							<Text
+								style={{
+									fontSize: 20,
+									letterSpacing: 1,
+									fontWeight: "bold",
+								}}>
+								Budget
+							</Text>
+							<Text style={{ letterSpacing: 1 }}>
+								Set your budget goal
+							</Text>
+						</View>
+						<TouchableOpacity
+							style={{
+								marginLeft: "auto",
+							}}>
+							<MaterialCommunityIcons name='plus' size={25} />
+						</TouchableOpacity>
+					</View>
+				</View>
+			</View>
+
+			<View
+				style={{
+					backgroundColor: "#edeefa",
+					marginTop: 20,
+					marginBottom: 30,
+				}}>
+				<View
+					style={{
+						backgroundColor: "#ffff",
+						borderRadius: 10,
+						elevation: 5,
+						padding: 10,
+					}}>
+					<View
+						style={{
+							flexDirection: "row",
+							justifyContent: "space-between",
+							alignItems: "center",
+						}}>
+						<View style={{ flex: 2, marginBottom: 10 }}>
+							<Text style={{ fontSize: 18, letterSpacing: 1 }}>
+								Your current monthly budget is{" "}
+								<Text
+									style={{
+										fontWeight: "bold",
+										fontSize: 20,
+									}}>
+									$2000{" "}
+								</Text>
+							</Text>
+							<View
+								style={{
+									flexDirection: "row",
+									alignItems: "center",
+									marginTop: 5,
+								}}>
+								<TouchableOpacity
+									style={{
+										backgroundColor: "#20806e",
+										alignSelf: "flex-start",
+										paddingHorizontal: 20,
+										paddingVertical: 2,
+										borderRadius: 8,
+										marginRight: 20,
+									}}>
+									<Text
+										style={{
+											textTransform: "uppercase",
+											fontSize: 12,
+											fontWeight: "bold",
+											letterSpacing: 1.1,
+											color: "#ffff",
+										}}>
+										edit
+									</Text>
+								</TouchableOpacity>
+							</View>
+						</View>
+						<ProgressCircle
+							percent={30}
+							radius={width * 0.1}
+							borderWidth={10}
+							shadowColor='#edeefa'
+							color='#20806e'
+							bgColor='#ffff'
+							containerStyle={{}}>
+							<Text
+								style={{
+									fontSize: 20,
+									fontWeight: "bold",
+								}}>
+								30%
+							</Text>
+						</ProgressCircle>
+					</View>
+
+					<Text
+						style={{
+							marginTop: 5,
+							fontWeight: "100",
+							color: "#bbbfbe",
+							letterSpacing: 1,
+						}}>
+						You are doing really well! You are currently spending
+						within your budget limit
+					</Text>
+				</View>
+			</View>
 		</ScrollView>
 	);
 };
