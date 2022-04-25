@@ -326,14 +326,13 @@ const AnalyticsScreen = () => {
 								labelName === data.x
 									? colorScale[ind]
 									: "#ffff",
-							marginTop: 10,
+
 							borderRadius: 15,
-							overflow: "hidden",
+							margin: 10,
 							padding: 5,
 							elevation: 5,
 							width: 140,
 							height: 140,
-							marginRight: 25,
 							alignItems: "center",
 							justifyContent: "center",
 						}}>
@@ -381,6 +380,7 @@ const AnalyticsScreen = () => {
 						<View
 							style={{
 								flexDirection: "row",
+								marginBottom: 5,
 							}}>
 							<Text
 								style={{
